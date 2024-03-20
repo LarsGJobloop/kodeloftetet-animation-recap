@@ -1,46 +1,72 @@
-* {
-  box-sizing: border-box;
+.animate-text-color {
+  animation-name: changing-color;
+  animation-duration: 1s;
+
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+
+/* Animasjons sekvensen */
+@keyframes changing-color {
+  from {
+    color: coral;
+  }
+
+  to {
+    color: cornflowerblue;
+  }
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #eee;
+.box {
+  background-color: gray;
+  height: 400px;
 }
 
-nav a {
-  display: inline-block;
-  min-width: 9rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
-  text-decoration: none;
-  color: #555;
+.ball  {
+  background-color: cornflowerblue;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation-name: bouncing-ball;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 }
 
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #d4d4d4;
+@keyframes bouncing-ball {
+  0% {
+    transform: translateY(0px);
+  }
+
+  90% {
+    transform: translateY(350px);
+    height: 50px;
+    width: 50px;
+  }
+
+  100% {
+    transform: translateY(360px);
+    height: 40px;
+    width: 60px;
+  }
 }
 
-main {
-  padding: 1rem;
+.slide-in-from-left {
+  animation-name: slide-in-from-left;
+  animation-duration: 500ms;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
 }
